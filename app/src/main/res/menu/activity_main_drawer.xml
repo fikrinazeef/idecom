@@ -8,14 +8,15 @@
             android:id="@+id/nav_pstn"
             android:title="PSTN SITES" />
         <item
+            android:id="@+id/nav_outstanding"
+            android:title="OUTSTANDING PAYMENT PSTN" />
+        <item
             android:id="@+id/nav_ipmsan"
             android:title="IPMSAN SITES" />
         <item
             android:id="@+id/nav_copper"
             android:title="COPPER CABLES" />
-        <item
-            android:id="@+id/nav_sales"
-            android:title="SALES and COLLECTION" />
+
         <item
             android:id="@+id/nav_logout"
             android:title="LOGOUT" />

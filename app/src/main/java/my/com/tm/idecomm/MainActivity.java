@@ -28,22 +28,27 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+//        final ActionBar ab = getSupportActionBar();
+//        if (ab != null) {
+//            ab.setLogo(R.mipmap.tm);
+//            ab.setTitle("MukilFM");
+//            ab.setHomeAsUpIndicator(R.mipmap.tm);
+//            ab.setDisplayHomeAsUpEnabled(true);
 
 
+            // MyView is my current Activity, and AlarmReceiver is the
+            // BoradCastReceiver
 
-        // MyView is my current Activity, and AlarmReceiver is the
-        // BoradCastReceiver
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.setDrawerListener(toggle);
+            toggle.syncState();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        displaySelectedScreen(R.id.nav_pstn);
+            displaySelectedScreen(R.id.nav_pstn);
 
 
 
@@ -67,15 +72,21 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_pstn:
                 fragment = new PSTN();
                 break;
+            case R.id.nav_outstanding:
+                fragment = new OutstandingPayment();
+                break;
             case R.id.nav_ipmsan:
-                fragment = new CabinetType();
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                startActivity(new Intent(MainActivity.this, Ipmsansite.class));
+                drawer.closeDrawers();
                 break;
             case R.id.nav_copper:
+                DrawerLayout drawers = (DrawerLayout) findViewById(R.id.drawer_layout);
+                startActivity(new Intent(MainActivity.this, Ipmsansite.class));
+                drawers.closeDrawers();
 //                fragment = new ScheduleFragment();
                 break;
-           case R.id.nav_sales:
-//               fragment = new GatedFragment();
-               break;
+
             /*     fragment = new Bank();
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 startActivity(new Intent(NavigationActivity.this, Bank.class));
