@@ -142,8 +142,8 @@ public class DetailVendor extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
         if(v == back) {
-            //finish();
-            startActivity(new Intent(getApplicationContext(), ProfileVendor.class));
+            finish();
+            //startActivity(new Intent(getApplicationContext(), ProfileVendor.class));
         }
     }
 }

@@ -48,10 +48,10 @@ public class ListAllComplete extends AppCompatActivity {
 
         back = (Button) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(view.getContext(), Completed_Sites.class);
-                view.getContext().startActivity(Intent);}
+            public void onClick(View v) {
+                finish();
+//                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
         });
 
 

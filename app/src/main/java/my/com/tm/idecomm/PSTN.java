@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -150,9 +151,8 @@ public class PSTN extends Fragment implements View.OnClickListener  {
     public void onClick(View view) {
         if(view == refreshs) {
             //finish();
-//            FragmentTransaction ft = getFragmentManager().beginTransaction();
-//            ft.detach(PSTN.this).attach(PSTN.this).commit();
-            startActivity(new Intent(getActivity(), MainActivity.class));
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.detach(PSTN.this).attach(PSTN.this).commit();
             Toast.makeText(getActivity(),"REFRESH",
                     Toast.LENGTH_LONG).show();
         }

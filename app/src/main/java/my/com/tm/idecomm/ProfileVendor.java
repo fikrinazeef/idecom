@@ -42,10 +42,10 @@ public class ProfileVendor extends AppCompatActivity implements ListView.OnItemC
 
         back = (Button) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(view.getContext(), MainActivity.class);
-                view.getContext().startActivity(Intent);}
+            public void onClick(View v) {
+                finish();
+//                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
         });
         getJSON();
     }

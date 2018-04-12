@@ -46,7 +46,8 @@ public class PendingSites extends AppCompatActivity implements ListView.OnItemCl
         back = (Button) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+//                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
 

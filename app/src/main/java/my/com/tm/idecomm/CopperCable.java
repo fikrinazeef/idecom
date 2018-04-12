@@ -1,6 +1,5 @@
 package my.com.tm.idecomm;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,8 +33,8 @@ public class CopperCable extends AppCompatActivity implements View.OnClickListen
     public void onClick(View view) {
 
         if(view == back) {
-            //finish();
-            startActivity(new Intent(getApplication(), MainActivity.class));
+            finish();
+            //startActivity(new Intent(getApplication(), MainActivity.class));
         }
 
     }
